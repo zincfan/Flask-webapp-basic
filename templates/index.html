@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head><title>My flask app</title></head>
+    <body>
+        <h2><centre>my heading flask</centre></h2>
+        <p>oh hrllo mmannc dc skvjs.</p>
+        <div class="container">
+            <ul class="menu">
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('createpro')}}">create-profile</a></li>
+                <li><a href="{{url_for('seehim')}}">seehim</a></li>
+                <li><a href="{{url_for('createpro')}}">create-profile</a></li>
+                {% if session['username'] %}
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+                {% endif %}
+                {% if not session['username'] %}
+                <li><a href="{{url_for('login')}}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="container" id="credential">
+            {% if session['username'] %}
+            <h4>Logged in as {{ session['username'] }}</h4>
+            {% endif %}
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>
