@@ -1,0 +1,54 @@
+.demo-layout-transparent {
+                background: url('img/dockstreet-wallpaper.jpg') center / cover;
+            }
+        
+            .demo-layout-transparent .mdl-layout__header,
+            .demo-layout-transparent .mdl-layout__drawer-button {
+                /* This background is dark, so we set text to white. Use 87% black instead if
+             your background is light. */
+                color:  white;
+            
+            }
+
+div#header-text.top-text
+{
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+span#inbox
+{
+    position: fixed;
+    top: 93%;
+    left: 93%;
+    color:white;
+}
+.mainhead{
+    color: #23641a;
+}
+
+div#top-information
+{
+    width: 100%;
+    height: auto;
+    background-color: rgb(241,243,244);
+    padding: 40px 20px;
+}
+div.three-columns-top
+{
+    width: 33%;
+    padding: 10px;
+}
+
+div.demo-card-wide
+{
+    top: 152px;
+    left: 30%;
+}
+footer.mdl-mega-footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

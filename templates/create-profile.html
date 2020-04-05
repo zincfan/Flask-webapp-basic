@@ -10,6 +10,10 @@
         <br><br>
         <form method="POST" action="{{url_for('data')}}">
             <div class="form-group">
+                {% if error %}
+                <font style="color: red;">Username exists</font>
+                {% endif %}
+                <br>
                 <label>Username</label>
                 <input type="text" placeholder="Enter Username" id="userid" name="userid" required="required"/>
                 <small class="text-muted">This username appears as your avatar name.</small>
