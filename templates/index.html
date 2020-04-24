@@ -21,7 +21,7 @@
                         <a class="mdl-navigation__link mainhead" href="{{url_for('seehim')}}">Seehim</a>
                         {% if session['username'] %}
                         <a class="mdl-navigation__link mainhead" href="{{url_for('logout')}}">Logout</a>
-                        <i class="fas fa-user-circle"></i>
+                        <img href="{{url_for('uploaded_icons', filename=get_user_photo(session['username']) ,width=40, height=30)}}"/>
                         {% endif %}
                         {% if not session['username'] %}
                         <a class="mdl-navigation__link mainhead" href="{{url_for('login')}}">Login</a>
@@ -32,12 +32,13 @@
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Title</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="{{url_for('index')}}">Index</a>
+                    <a class="mdl-navigation__link" href="{{url_for('createpro')}}">Create-profile</a>
+                    <a class="mdl-navigation__link" href="{{url_for('seehim')}}">seehim</a>
                     {% if session['username'] %}
-                    <a class="mdl-navigation__link">{{ session['username'] }}</a>
+                    <a class="mdl-navigation__link" href="{{url_for('logout')}}">{{ session['username'] }}</a>
+                    {% else %}
+                    <a class="mdl-navigation__link" href="{{url_for('login')}}">Login</a>
                     {% endif %}
                 </nav>
             </div>
